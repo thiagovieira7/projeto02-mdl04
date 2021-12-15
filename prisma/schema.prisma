@@ -11,15 +11,14 @@ datasource db {
 }
 
 model Usuario {
-  id Int @id @default(autoincrement())
-  nome String
-  image String
-  bio String
+  id         Int      @id @default(autoincrement())
+  nome       String
+  image      String
+  bio        String
   nascimento DateTime
-  
+
 }
 
-model Seguidores{
+model Seguidores {
   id Int @id @default(autoincrement())
-  
 }
