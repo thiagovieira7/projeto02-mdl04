@@ -4,6 +4,8 @@ import { PrismaService } from '../../prisma/prisma.service';
 import { CreateSeguidoresDto } from './dto/create-seguidores.dto';
 import { UpdateSeguidoresDto } from './dto/update-seguidores.dto';
 import { Seguidores } from '@prisma/client';
+import * as bcrypt from 'bcrypt';
+
 
 @Injectable()
 export class SeguidoresService {
