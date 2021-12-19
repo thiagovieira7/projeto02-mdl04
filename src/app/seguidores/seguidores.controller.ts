@@ -1,9 +1,18 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+/* eslint-disable prettier/prettier */
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { SeguidoresService } from './seguidores.service';
 import { CreateSeguidoreDto } from './dto/create-seguidore.dto';
 import { UpdateSeguidoreDto } from './dto/update-seguidore.dto';
 
-@Controller('seguidores')
+@Controller('/api/v1/seguidores')
 export class SeguidoresController {
   constructor(private readonly seguidoresService: SeguidoresService) {}
 
@@ -23,7 +32,10 @@ export class SeguidoresController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateSeguidoreDto: UpdateSeguidoreDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateSeguidoreDto: UpdateSeguidoreDto,
+  ) {
     return this.seguidoresService.update(+id, updateSeguidoreDto);
   }
 
