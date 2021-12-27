@@ -11,6 +11,7 @@ import { Request } from 'express';
 import { UsuarioService } from './usuario.service';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
+import { Usuario, Prisma } from '@prisma/client';
 
 @Controller('usuario')
 export class UsuarioController {
@@ -22,7 +23,7 @@ export class UsuarioController {
   }
 
   @Get()
-  findAll() {
+  async findAll(): Promise<Usuario>[] {
     return this.usuarioService.findAll();
   }
 

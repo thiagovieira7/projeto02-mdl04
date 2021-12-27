@@ -22,3 +22,5 @@ model Usuario {
 model Seguidores {
   id Int @id @default(autoincrement())
 }
+
+

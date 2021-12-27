@@ -5,6 +5,7 @@ import { PrismaService } from '../../prisma/prisma.service';
 import { Usuario, Prisma } from '@prisma/client';
 import * as bcrypt from 'bcrypt';
 
+
 const listaUser = [];
 @Injectable()
 export class UsuarioService {
