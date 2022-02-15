@@ -30,13 +30,13 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Descrição
 
-Criação do projeto utilizando o NESTJS, um dos melhores frameworks para se trabalhar, ele utiliza Typescript, a linguagem de programação que vamos utilizar e pode ser executado em frameworks HTTP como expressJS ou Fastify. Também utilizando a integração do Prisma e Postgresql.
+Criação do projeto utilizando o NESTJS, utilizando Typescript.
 
 ## Installation
 
-Para iniciar com o NestJS devemos instalar a NestJS CLI de forma global:
+Para iniciar instale o NestJS CLI de forma global:
 
 ```bash
 npm i -g @nestjs/cli
@@ -66,11 +66,10 @@ Ele deverá por padrão em http://localhost:3000
 
 Quando rodamos esse comando, automaticamente o NestJS gera a pasta `dist`, onde contém arquivos `.js`, `.map` e `.d.ts.
 
-Explorando um pouco a estrutura do NestJS, percebemos que temos 5 arquivos que foram gerados automaticamente dentro da pasta src: 
+Automaticamente é criado 5 arquivos dentro da pasta src: 
 
-![img](https://blueedtech.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mj_r__f7dzSt2HUbwjg%2Fuploads%2FSzHtCS9EudOxrUvSywZr%2Fimg10.PNG?alt=media&token=9e3d8e21-772e-4992-b3e2-90260bacd047)
 
-São eles: 
+
 
 - app.controller.spec.ts, 
 - app.controller.ts, 
@@ -78,17 +77,8 @@ São eles:
 - app.service.ts 
 - E dentro dessa aplicação temos o arquivo mais importante que é o "coração" do projeto o main.ts.
 
-## Este Projeto Contém:
 
-​                             `[Postgres+ NestJS + TypeScript + Prisma + JWT]` 
-
-O projeto consiste em criar uma API que servirá para controle do Twitter, onde o usurio postará tweets e terá seguidores.
-
-Respeitando o diagrama, os alunos devem desenvolver o schema prisma para montar o banco postgres, toda interação das tabelas é one to many.
-
- O JWT nesse projeto deve apenas servir de autenticação, ou seja apenas fornecendo um token valido na aplicação.
-
- Em nossos arquivos DTO é necessário que realizemos as validações por meio dos @Decorators.
+Em nossos arquivos DTO é necessário que realizemos as validações por meio dos @Decorators.
 
 Para este projeto foram criadas 4 pastas distintas dentro da pasta `src` são elas:
 
@@ -107,7 +97,7 @@ Com esse comando havera a criação da pasta no caso (usuario) e dentro dela ter
 
 Rode o mesmo comando para criação das outras três pastas.
 
-## Algumas Validações Importantes
+## Validações 
 
 Rode estes dois comandos:
 
@@ -184,14 +174,11 @@ npx prisma studio
 ## Rotas
 
 **Temos 4 rotas principais:**
+Usuario-post
+Tweets
+Seguindo
+Seguidores
 
-<img src="C:\Users\welli\OneDrive\Imagens\projeto2-mod4\post-usuario.png" alt="post-usuario" style="zoom:60%;" />
-
-![tweets](C:\Users\welli\OneDrive\Imagens\projeto2-mod4\tweets.png)
-
-![seguidores](C:\Users\welli\OneDrive\Imagens\projeto2-mod4\seguidores.png)
-
-![seguindo](C:\Users\welli\OneDrive\Imagens\projeto2-mod4\seguindo.png)
 
 **Dentro de cada rota temos um CRUD completo criado com os Decorators:**
 
@@ -226,7 +213,7 @@ npx prisma studio
   }
 ```
 
- `@Patch(':id') ` 	**Cada uma das rotas principais tem o seu:**
+ `@Patch(':id') ` 	**Cada rota tem um id:**
 
 ```javascript
   @Patch(':id')
@@ -348,7 +335,6 @@ npx prisma studio
 
 **Post  rota** `/usuarios` , **no Thunder:**	
 
-<img src="C:\Users\welli\OneDrive\Imagens\projeto2-mod4\post-usuario.png" alt="post-usuario" style="zoom:60%;" />		 
 
 - ​	**Usado para adicionar um usuario no banco de dados local.**
 - ​    **Para adicionar um usuario dentro do banco, necessita passar todos os dados com suas devidas informações a seguir no exemplo:( id, createdAt e updatedAt não precisa passar, pois são autoincrement )**
@@ -362,7 +348,7 @@ npx prisma studio
   "nascimento":    //String 
 ```
 
-![postthamy](C:\Users\welli\OneDrive\Imagens\projeto2-mod4\postthamy.png)
+![postthamy]
 
 **Post  rota** `/tweets , **no Thunder:**
 
@@ -378,11 +364,11 @@ npx prisma studio
   "usuarioid":     //Number 
 ```
 
-![tweetsp](C:\Users\welli\OneDrive\Imagens\projeto2-mod4\tweetsp.png)
+![tweetsp]
 
 **Post  rota** `/seguidores` , **no Thunder:**
 
-![seguidores](C:\Users\welli\OneDrive\Imagens\projeto2-mod4\seguidores.png)		 
+![seguidores]	 
 
 - ​	**Usado para adicionar um seguidor ao usuario ja existente no banco.**
 - ​    **Para adicionar um seguidor, necessita passar o ID do usuario ja existente exemplo:**
@@ -391,7 +377,7 @@ npx prisma studio
  "usuarioid": 3,           //Number
 ```
 
-![seguidoresp](C:\Users\welli\OneDrive\Imagens\projeto2-mod4\seguidoresp.png)
+![seguidoresp]
 
 **Post  rota** `/seguindo , **no Thunder:**	
 
@@ -404,7 +390,7 @@ npx prisma studio
  "usuarioid": 3,           //Number
 ```
 
-![seguindop](C:\Users\welli\OneDrive\Imagens\projeto2-mod4\seguindop.png)
+![seguindop]
 
 * **Todos os `id` são autoincrement (criado sozinho, não precisa passar)**
 
