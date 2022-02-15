@@ -163,7 +163,7 @@ npx prisma studio
 
 ## Rotas
 
-**Temos 4 rotas principais:**
+**Rotas principais:**
 Usuario-post
 Tweets
 Seguindo
@@ -172,7 +172,7 @@ Seguidores
 
 **Dentro de cada rota temos um CRUD completo criado com os Decorators:**
 
- `@POst()` 	**Cada uma das rotas principais tem o seu:**
+ `@POst()` 	**Cada rota tem um id:**
 
 ```javascript
  @Post()
@@ -233,7 +233,7 @@ Seguidores
   }
 ```
 
-`@Delete`()  	**cada rota principal tem o seu:**
+`@Delete`()  	**Cada rota tem um id:**
 
 ```javascript
 @Delete(':id')
@@ -263,7 +263,7 @@ Seguidores
   }
 ```
 
-`@Get `() 	  ***cada rota principal tem o seu:***
+`@Get `() 	  ***Cada rota tem um id:***
 
 ```javascript
 @Get()
@@ -293,7 +293,7 @@ Seguidores
   }
 ```
 
-`@Get(':id')`  ***cada rota principal tem o seu:***
+`@Get(':id')`  ***Cada rota tem um id:***
 
 ```javascript
 @Get(':id')
