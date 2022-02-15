@@ -1,0 +1,79 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Tweet {
+  id            Int                  @id @default(autoincrement())
+  texto         String
+  emoji         String?
+  curtidas      Int
+  usuarioid     Int
+  Usuario       Usuario?             @relation(fields: [usuarioid], references: [id])
+  categorias    Categoriasemtweets[]
+  tweetfavorito usuariosFavorito[]
+  createdAt     DateTime             @default(now()) @map("created_at")
+}
+
+model Categoria {
+  id        Int                  @id @default(autoincrement())
+  nome      String
+  tweet     Categoriasemtweets[]
+  createdAt DateTime             @default(now()) @map("created_at")
+}
+
+model Seguidores {
+  id        Int      @id @default(autoincrement())
+  nome      String
+  usuarioid Int
+  Usuario   Usuario? @relation(fields: [usuarioid], references: [id])
+  createdAt DateTime @default(now()) @map("created_at")
+}
+
+model Seguindo {
+  id        Int      @id @default(autoincrement())
+  nome      String
+  usuarioid Int
+  Usuario   Usuario? @relation(fields: [usuarioid], references: [id])
+  createdAt DateTime @default(now()) @map("created_at")
+}
+
+model Usuario {
+  id            Int                @id @default(autoincrement())
+  email         String
+  senha         String
+  nome          String
+  imagem        String?
+  bio           String
+  nascimento    String
+  seguidores    Seguidores[]
+  seguindo      Seguindo[]
+  tweet         Tweet[]
+  tweetfavorito usuariosFavorito[]
+  createdAt     DateTime           @default(now()) @map("created_at")
+  updatedAt     DateTime           @updatedAt
+}
+
+model Categoriasemtweets {
+  tweet       Tweet?     @relation(fields: [tweetid], references: [id])
+  tweetid     Int
+  categoria   Categoria? @relation(fields: [categoriaid], references: [id])
+  categoriaid Int
+  createdAt   DateTime   @default(now()) @map("created_at")
+
+  @@id([tweetid, categoriaid])
+}
+
+model usuariosFavorito {
+  tweetid   Int
+  tweet     Tweet?   @relation(fields: [tweetid], references: [id])
+  usuarioid Int
+  usuario   Usuario? @relation(fields: [usuarioid], references: [id])
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@id([tweetid, usuarioid])
+}
