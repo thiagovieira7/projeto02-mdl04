@@ -127,16 +127,6 @@ bootstrap();
 
 ```
 
-## Em Geral DTO:
-
-**DTO** ( *Data Transfer Object* ) é usado para analisar e validar os dados da solicitação. DTOs sempre são usados com **controladores** . É um cenário comum quando o servidor da web deve validar os dados antes do processamento. O DTO pode otimizar e automatizar esse processo.
-
-## Decoradores para validação
-
-Há um conjunto de decoradores para validação de dados conveniente. Se você tiver necessidades especiais de validação, você sempre pode implementar seu próprio decorador (leia mais em avançado). Mas decoradores personalizados podem ser implementados. Leia em Avançado sobre isso.
-
-​                                               `https://odi.gitbook.io/core/basics/dto`
-
 ## Prisma
 
 Para que o prisma podesse ser utilizado instalei as seguintes dependencias:
@@ -352,7 +342,7 @@ Seguidores
 
 **Post  rota** `/tweets , **no Thunder:**
 
-<img src="C:\Users\welli\OneDrive\Imagens\projeto2-mod4\tweets.png" alt="tweets" style="zoom:60%;" />			 
+	 
 
 - ​	**Usado para postar uma mensagem.**
 - ​    **Para adicionar um tweets, necessita passar todos os dados com suas devidas informações a seguir no exemplo:**
@@ -381,7 +371,7 @@ Seguidores
 
 **Post  rota** `/seguindo , **no Thunder:**	
 
-![seguindo](C:\Users\welli\OneDrive\Imagens\projeto2-mod4\seguindo.png)		 
+![seguindo]		 
 
 - ​	**Usado para informar quem o usuario esta seguindo** 
 - ​    **Para adicionar quem o usuario esta seguindo, necessita passar o ID do usuario ja existente, exemplo:**
